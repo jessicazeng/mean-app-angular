@@ -1,10 +1,14 @@
-# MeanAppAngular2
+# MeanAppAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.5.
+This project uses the MEAN stack. It was generated with [Angular CLI](https://github.com/angular/angular-cli) and is served on a Node.js server. It uses SASS.
 
-## Development server
+## Development
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run start:dev` for a dev server. Navigate to `http://localhost:3000/`.
+
+## Production
+
+Run `npm run start:prod` for a dev server. Navigate to `http://localhost:3000/`.
 
 ## Code scaffolding
 
@@ -12,7 +16,7 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `npm run build:dev` to build the project for development. The build artifacts will be stored in the `dist/` directory. Run 'npm run build:prod' for production build.
 
 ## Running unit tests
 

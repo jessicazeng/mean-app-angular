@@ -1,14 +1,21 @@
 {
-  "name": "mean-app-angular2",
+  "name": "mean-app-angular",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "clean": "rm -rf dist/*",
+    "build:client:dev": "ng build",
+    "build:client:prod": "ng build -prod -aot",
+    "build:server": "cp server.js dist/ & mkdir dist/server & cp -r server dist/server",
+    "build:dev": "build:client:dev & build:server",
+    "build:prod": "build:client:dev & build:server",
+    "start": "node dist/server.js",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start:dev": "npm run clean & npm run build:dev & npm run start",
+    "start:prod": "npm run clean & npm run build:dev & npm run start"
   },
   "private": true,
   "dependencies": {
@@ -21,7 +28,11 @@
     "@angular/platform-browser": "^4.2.4",
     "@angular/platform-browser-dynamic": "^4.2.4",
     "@angular/router": "^4.2.4",
+    "axios": "^0.16.2",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0-beta",
     "core-js": "^2.4.1",
+    "express": "^4.16.1",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },
@@ -41,7 +52,9 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "node-sass": "^4.5.3",
     "protractor": "~5.1.2",
+    "sass-loader": "^6.0.6",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.3.3"
