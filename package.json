@@ -8,8 +8,8 @@
     "build:client:dev": "ng build",
     "build:client:prod": "ng build -prod -aot",
     "build:server": "cp server.js dist/ & mkdir dist/server & cp -r server dist/server",
-    "build:dev": "build:client:dev & build:server",
-    "build:prod": "build:client:dev & build:server",
+    "build:dev": "npm run build:client:dev &  npm run build:server",
+    "build:prod": "npm run build:client:dev & npm run build:server",
     "start": "node dist/server.js",
     "test": "ng test",
     "lint": "ng lint",
@@ -33,6 +33,7 @@
     "bootstrap": "^4.0.0-beta",
     "core-js": "^2.4.1",
     "express": "^4.16.1",
+    "mongoose": "^4.11.6",
     "rxjs": "^5.4.2",
     "zone.js": "^0.8.14"
   },
